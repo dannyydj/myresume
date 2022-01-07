@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name"description" content="Danny Djahidin Product Manager Tech Startup E-Commerce IS/IT consultant Lecturer">
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link href="assets/bootstrap.min.css" rel="stylesheet">
     <link href="assets/animate.min.css" rel="stylesheet">
     <link href="assets/bootstrap-icons.min.css" rel="stylesheet">
@@ -18,11 +18,14 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-89096608-2"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        if(location.origin!='file://'){
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-    gtag('config', 'UA-89096608-2');
+            gtag('config', 'UA-89096608-2');
+            console.log(location)
+        }
     </script>
 </head>
 <body style="background-color: snow;">
