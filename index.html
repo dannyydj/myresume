@@ -252,21 +252,9 @@
         }
         
     </style>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-89096608-2"></script>
-    <script>
-        // if(location.origin!='file://'){
-        //     window.dataLayer = window.dataLayer || [];
-        //     function gtag(){dataLayer.push(arguments);}
-        //     gtag('js', new Date());
-
-        //     gtag('config', 'UA-89096608-2');
-        //     // console.log(location)
-        // }
-    </script> -->
 </head>
 <body style="background-color: snow;">
-    <div class="col-lg-8 mx-auto p-3 py-md-5">
+    <div class="col-lg-8 mx-auto p-3 py-md-5" id="resume">
         <header class="d-flex align-items-center pb-2 mb-3">
             <div class="container-fluid">
                 <div class="row">
@@ -669,7 +657,7 @@
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="bi bi-hourglass-split icon-spacing"></i>Sending...';
             // responseText.className = 'loading-text';
-            responseText.textContent = 'Loading response...';
+            responseText.textContent = 'Loading response... It might take a while.';
             
             // Hide form, show response section with loading
             formSection.style.display = 'none';
