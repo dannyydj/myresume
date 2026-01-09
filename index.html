@@ -30,8 +30,8 @@
         /* Chat Button - Fixed Bottom Right */
         .chat-button-container {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: max(20px, env(safe-area-inset-bottom));
+            right: max(20px, env(safe-area-inset-right));
             z-index: 9998;
             display: flex;
             align-items: center;
@@ -290,7 +290,8 @@
 
                         </div>
                         <div class="card-body">
-                            <h5>I've 14+ years of experience in tech industry and in nutsheel I'm: </h5>
+                            <h5>I've <span id="years of experience"></span>+ years of experience in tech industry and in
+                                nutsheel I'm: </h5>
                             a pinch of business analysis and accounting;<br>
                             a spoon of UX design, programming and SQL;<br>
                             a cup of project management;<br>
@@ -754,6 +755,18 @@
                 submitBtn.innerHTML = '<i class="bi bi-send-fill icon-spacing"></i>Submit';
             }
         });
+
+        //create function to calculate years given a start date of 2010-09-01
+        function calculateExperience() {
+            const startDate = new Date('2010-09-01');
+            const endDate = new Date();
+            const diffTime = Math.abs(endDate - startDate);
+            const diffYears = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365.25));
+            return diffYears;
+        }
+
+        //display the years of experience in a span element with id years of experience
+        document.getElementById('years of experience').textContent = calculateExperience();
     </script>
 
 </body>
