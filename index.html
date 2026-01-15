@@ -244,6 +244,83 @@
             margin-right: 8px;
         }
 
+        /* Custom Tab Styles */
+        .custom-tabs {
+            border-bottom: 2px solid #dee2e6;
+            margin-bottom: 1.5rem;
+        }
+
+        .custom-tabs .nav-link {
+            border: none;
+            color: #6c757d;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            border-radius: 0;
+        }
+
+        .custom-tabs .nav-link:hover {
+            color: #575656;
+            background-color: transparent;
+        }
+
+        .custom-tabs .nav-link.active {
+            color: #575656;
+            background-color: transparent;
+            border-bottom: 3px solid #575656;
+            margin-bottom: -2px;
+        }
+
+        /* Project Card Styles */
+        .project-card {
+            border-left: 4px solid #575656;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-left-color: rgb(58, 94, 124);
+            transform: translateX(5px);
+        }
+
+        .project-tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .tech-badge {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: #495057;
+        }
+
+        /* Publication Card Styles */
+        .publication-card {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid #dee2e6;
+        }
+
+        .publication-card:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .publication-meta {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
         /* Mobile responsiveness */
         @media (max-width: 768px) {
             .chat-icon-button {
@@ -254,6 +331,32 @@
                 max-width: 100%;
                 max-height: 100vh;
                 border-radius: 0;
+            }
+
+            .custom-tabs {
+                overflow-x: auto;
+                overflow-y: hidden;
+                flex-wrap: nowrap;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                /* Firefox */
+                -ms-overflow-style: none;
+                /* IE/Edge */
+            }
+
+            .custom-tabs::-webkit-scrollbar {
+                display: none;
+                /* Chrome/Safari */
+            }
+
+            .custom-tabs .nav-link {
+                padding: 0.75rem 1rem;
+                white-space: nowrap;
+                font-size: 0.9rem;
+            }
+
+            .custom-tabs .nav-item {
+                flex-shrink: 0;
             }
 
             h3 {
@@ -304,6 +407,7 @@
         </header>
         <main>
             <div class="row">
+                <!-- Sidebar -->
                 <div class="col-md-4 border-top pt-4">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item border-0 bg-transparent">
@@ -374,191 +478,291 @@
                         </li>
                     </ul>
                 </div>
+                <!-- End Sidebar -->
+
+                <!-- Main Content -->
                 <div class="col-md-8 border-top pt-3">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item border-0 bg-transparent">
-                            <h2><i class="bi bi-briefcase"></i> Experiences</h2>
+                    <!-- Tab Navigation -->
+                    <ul class="nav nav-tabs custom-tabs" id="mainTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="experience-tab" data-bs-toggle="tab"
+                                data-bs-target="#experience" type="button" role="tab">
+                                <i class="bi bi-briefcase"></i> Experience
+                            </button>
                         </li>
-                        <li class="list-group-item border-0 bg-transparent">
-                            <h5>
-                                <a href="https://xing.com/?utm_source=dannyydj.my.id" target="_blank"
-                                    class="text-decoration-none">Xing</a>
-                                - Product Manager
-                            </h5>
-                            <p class="font-monospace fs-6 fw-light">Oct 2022 - Jan 2026</p>
-                            <ul class="fs-6 fw-lighter">
-                                <li>Led Android, iOS platform and Mobile DevOps teams, maintaining a 99% crash-free
-                                    rate.</li>
-                                <li>Improved time-to-market with consistent weekly releases for both iOS and Android.
-                                </li>
-                                <li>Collaborated with other product teams to provide shared components, libraries, and
-                                    SDKs.</li>
-                                <li>Was part of the team that manage an internal Experimentation Tool, enabling A/B
-                                    testing across Web, Android, and iOS platforms.</li>
-                                <li>Built a machine learning pipeline to classify user reviews and feedback.</li>
-                            </ul>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="projects-tab" data-bs-toggle="tab" data-bs-target="#projects"
+                                type="button" role="tab">
+                                <i class="bi bi-code-square"></i> Projects
+                            </button>
                         </li>
-                        <li class="list-group-item border-0 bg-transparent">
-                            <h5>
-                                <a href="https://mercubuana.ac.id/id/?utm_source=dannyydj.my.id" target="_blank"
-                                    class="text-decoration-none">Mercubuana University</a>
-                                - Lecturer
-                            </h5>
-                            <p class="font-monospace fs-6 fw-light">2014 - 2024</p>
-                            <ul class="fs-6 fw-lighter">
-                                <li>Information System lecturer and faculty member</li>
-                                <li>Published 4 research papers in national accredited journals</li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item border-0 bg-transparent">
-                            <h5>
-                                <a href="https://www.sirclo.com/home/?utm_source=dannyydj.my.id" target="_blank"
-                                    class="text-decoration-none">SIRCLO</a>
-                                - Senior Product Manager
-                            </h5>
-                            <p class="font-monospace fs-6 fw-light">Apr 2022 - Sep 2022</p>
-                            <p class="fs-6 fw-lighter">
-                            <ul class="fs-6 fw-lighter">
-                                <li>Led cross-functional logistic teams while waiting for visa and relocation and
-                                    successfully doubled the transaction in festive season.</li>
-                                <li>Led R&D and launched several experimental projects: shared services of e-commerce
-                                    platform, Android app for SIRCLO sellers, e-commerce warehousing for SMEs.</li>
-                            </ul>
-                            </p>
-                        </li>
-                        <li class="list-group-item border-0 bg-transparent">
-                            <h5>
-                                <a href="https://gotoko.co.id/en/?utm_source=dannyydj.my.id" target="_blank"
-                                    class="text-decoration-none">GoToko</a>
-                                - Product Manager
-                            </h5>
-                            <p class="font-monospace fs-6 fw-light">Oct 2021 - Apr 2022</p>
-                            <p class="fs-6 fw-lighter">
-                            <ul class="fs-6 fw-lighter">
-                                <li>Built B2B e-commerce platform with Gojek and Unilever to serve the underserved
-                                    retailers</li>
-                                <li>Managed order journey from checkout until fulfilment including cash management and
-                                    logistics.</li>
-                            </ul>
-                            </p>
-                        </li>
-                        <li class="list-group-item border-0 bg-transparent">
-                            <h5>
-                                <a href="https://www.sirclo.com/home/?utm_source=dannyydj.my.id" target="_blank"
-                                    class="text-decoration-none">SIRCLO</a>
-                            </h5>
-                            <h5>Senior Product Manager</h5>
-                            <p class="font-monospace fs-6 fw-light">Jun 2019 - Sep 2021</p>
-                            <h5>Product Manager</h5>
-                            <p class="font-monospace fs-6 fw-light">Sep 2017 - Jun 2019</p>
-                            <ul class="fs-6 fw-lighter">
-                                <li>Craft quarterly OKRs and roadmap with product team and communicate it to
-                                    stakeholders</li>
-                                <li>Initiated and managed some strategic projects (one successfully generating revenue
-                                    and become part of SaaS offering, others are either sunsetted or ice-boxed)</li>
-                                <li>Contributed to:</li>
-                                <ul>
-                                    <li>SIRCLO Commerce (Enterprise B2B)</li>
-                                    <ul>
-                                        <li>Spearheaded the entire product domains (e-commerce, WMS, ERP, Finance, 3rd
-                                            party logistics)</li>
-                                        <li>Collaborated with internal & external stakeholders to scale fulfillment
-                                            throughput</li>
-                                        <li>Worked together with 3rd parties to achieve seamless integration and make
-                                            life easier for the users while saving hundreds million of IDR per month of
-                                            opex</li>
-                                    </ul>
-                                </ul>
-                                <ul>
-                                    <li>SIRCLO Store (SME B2B2C - <a href="https://shopify.com"
-                                            target="_blank">Shopify</a>-like SaaS)</li>
-                                    <ul>
-                                        <li>Collaborated with multiple stakeholders to launch new e-commerce SaaS
-                                            platform (got a really good traction with help of covid)</li>
-                                        <li>Managed 1-3 PMs</li>
-                                        <li>Led 2 squads after the platform launched</li>
-                                        <ul>
-                                            <li><b>Billing & subscription squad</b></li>
-                                            <li>Launched new internal billing platform</li>
-                                            <li>Collaborated with product design to revamp the subscription journey</li>
-                                            <li>Increased self subscription rate</li>
-                                            <li>Increased on time payment rate</li>
-                                            <li><b>Registration, onboarding and user management squad</b></li>
-                                            <li>Launched new internal billing platform</li>
-                                            <li>Reduced bounce rate in registration journey</li>
-                                            <li>Increased FTUE (First Time User Experience) and 1st week activation rate
-                                            </li>
-                                            <li>Collaborated with engineering team to create Public API documentation
-                                            </li>
-                                        </ul>
-                                    </ul>
-                                </ul>
-                            </ul>
-                        </li>
-                        <li class="list-group-item border-0 bg-transparent">
-                            <h5>
-                                <a href="https://www.mii.co.id/?utm_source=dannyydj.my.id" target="_blank"
-                                    class="text-decoration-none">Mitra Integrasi Informatika</a>
-                                - Application Consultant
-                            </h5>
-                            <p class="font-monospace fs-6 fw-light">Nov 2016 - Sep 2017</p>
-                            <ul class="fs-6 fw-lighter">
-                                <li>Infor SunSystems Application Consultant</li>
-                                <li>Billing System Technical Consultant</li>
-                                <li>ASP.NET (C#) Technical Consultant</li>
-                                <li>Produced system (and functional) specification requirements document</li>
-                                <li>Provide on-site support and application-related consulting</li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item border-0 bg-transparent">
-                            <h5>
-                                <a href="https://trisakti.ac.id/?utm_source=dannyydj.my.id" target="_blank"
-                                    class="text-decoration-none">Trisakti University</a>
-                                - Lecturer
-                            </h5>
-                            <p class="font-monospace fs-6 fw-light">2014 - 2016</p>
-                            <p class="fs-6 fw-lighter">Lecturer for Accounting Information System class in Chartered
-                                Accountant exam preparation program</p>
-                        </li>
-                        <li class="list-group-item border-0 bg-transparent">
-                            <h5>
-                                <a href="https://meta-technology.net/?utm_source=dannyydj.my.id" target="_blank"
-                                    class="text-decoration-none">Meta Advance Solution</a>
-                                - Operation & Technology Head
-                            </h5>
-                            <p class="font-monospace fs-6 fw-light">Aug 2014 - Apr 2016</p>
-                            <ul class="fs-6 fw-lighter">
-                                <li>Co-founder</li>
-                                <li>Spinoff company of Meta Technology Indonesia</li>
-                                <li>Achieved 100 users with 10 mil IDR MRR on the 1st year but closed down after no
-                                    additional funding</li>
-                                <li>Develop and maintain company's bookkeeping SaaS product</li>
-                                <li>Plan, manage, monitor, and execute daily operations</li>
-                                <li>Training users, guide implementation and data migration</li>
-                                <li>Deliver supports and troubleshooting for ultimate customer satisfaction</li>
-                                <li>Act as consultant for system-related process to clients</li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item border-0 bg-transparent">
-                            <h5>
-                                <a href="https://meta-technology.net/?utm_source=dannyydj.my.id" target="_blank"
-                                    class="text-decoration-none">Meta Technology Indonesia</a>
-                                - System Analyst
-                            </h5>
-                            <p class="font-monospace fs-6 fw-light">Jun 2010 - Sep 2016</p>
-                            <ul class="fs-6 fw-lighter">
-                                <li>Built and maintained integrated automotive dealership, workshop and accounting
-                                    system</li>
-                                <li>Gather user requirements</li>
-                                <li>Conduct analysis on incoming change requests</li>
-                                <li>Led and mentor fellow analysts, programmers, and implementers</li>
-                                <li>Built a simple migration tool</li>
-                                <li>Make sure all my teammates focused, driven, and encouraged throughout projects</li>
-                                <li>Plan, monitor, and execute defined timeline</li>
-                                <li>Deliver support on-site or remote, pre and post migration, and live</li>
-                            </ul>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="publications-tab" data-bs-toggle="tab"
+                                data-bs-target="#publications" type="button" role="tab">
+                                <i class="bi bi-journal-text"></i> Publications
+                            </button>
                         </li>
                     </ul>
+
+                    <!-- Tab Content -->
+                    <div class="tab-content" id="mainTabsContent">
+                        <!-- Experience Tab -->
+                        <div class="tab-pane fade show active" id="experience" role="tabpanel">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item border-0 bg-transparent">
+                                    <h5>
+                                        <a href="https://xing.com/?utm_source=dannyydj.my.id" target="_blank"
+                                            class="text-decoration-none">Xing</a>
+                                        - Product Manager
+                                    </h5>
+                                    <p class="font-monospace fs-6 fw-light">Oct 2022 - Jan 2026</p>
+                                    <ul class="fs-6 fw-lighter">
+                                        <li>Led Android, iOS platform and Mobile DevOps teams, maintaining a 99%
+                                            crash-free rate.</li>
+                                        <li>Improved time-to-market with consistent weekly releases for both iOS and
+                                            Android.</li>
+                                        <li>Collaborated with other product teams to provide shared components,
+                                            libraries, and SDKs.</li>
+                                        <li>Was part of the team that manage an internal Experimentation Tool, enabling
+                                            A/B testing across Web, Android, and iOS platforms.</li>
+                                        <li>Built a machine learning pipeline to classify user reviews and feedback.
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="list-group-item border-0 bg-transparent">
+                                    <h5>
+                                        <a href="https://mercubuana.ac.id/id/?utm_source=dannyydj.my.id" target="_blank"
+                                            class="text-decoration-none">Mercubuana University</a>
+                                        - Lecturer
+                                    </h5>
+                                    <p class="font-monospace fs-6 fw-light">2014 - 2024</p>
+                                    <ul class="fs-6 fw-lighter">
+                                        <li>Information System lecturer and faculty member</li>
+                                        <li>Published 4 research papers in national accredited journals</li>
+                                    </ul>
+                                </li>
+                                <li class="list-group-item border-0 bg-transparent">
+                                    <h5>
+                                        <a href="https://www.sirclo.com/home/?utm_source=dannyydj.my.id" target="_blank"
+                                            class="text-decoration-none">SIRCLO</a>
+                                        - Senior Product Manager
+                                    </h5>
+                                    <p class="font-monospace fs-6 fw-light">Apr 2022 - Sep 2022</p>
+                                    <p class="fs-6 fw-lighter">
+                                    <ul class="fs-6 fw-lighter">
+                                        <li>Led cross-functional logistic teams while waiting for visa and relocation
+                                            and successfully doubled the transaction in festive season.</li>
+                                        <li>Led R&D and launched several experimental projects: shared services of
+                                            e-commerce platform, Android app for SIRCLO sellers, e-commerce warehousing
+                                            for SMEs.</li>
+                                    </ul>
+                                    </p>
+                                </li>
+                                <li class="list-group-item border-0 bg-transparent">
+                                    <h5>
+                                        <a href="https://gotoko.co.id/en/?utm_source=dannyydj.my.id" target="_blank"
+                                            class="text-decoration-none">GoToko</a>
+                                        - Product Manager
+                                    </h5>
+                                    <p class="font-monospace fs-6 fw-light">Oct 2021 - Apr 2022</p>
+                                    <p class="fs-6 fw-lighter">
+                                    <ul class="fs-6 fw-lighter">
+                                        <li>Built B2B e-commerce platform with Gojek and Unilever to serve the
+                                            underserved
+                                            retailers</li>
+                                        <li>Managed order journey from checkout until fulfilment including cash
+                                            management and
+                                            logistics.</li>
+                                    </ul>
+                                    </p>
+                                </li>
+                                <li class="list-group-item border-0 bg-transparent">
+                                    <h5>
+                                        <a href="https://www.sirclo.com/home/?utm_source=dannyydj.my.id" target="_blank"
+                                            class="text-decoration-none">SIRCLO</a>
+                                    </h5>
+                                    <h5>Senior Product Manager</h5>
+                                    <p class="font-monospace fs-6 fw-light">Jun 2019 - Sep 2021</p>
+                                    <h5>Product Manager</h5>
+                                    <p class="font-monospace fs-6 fw-light">Sep 2017 - Jun 2019</p>
+                                    <ul class="fs-6 fw-lighter">
+                                        <li>Craft quarterly OKRs and roadmap with product team and communicate it to
+                                            stakeholders</li>
+                                        <li>Initiated and managed some strategic projects (one successfully generating
+                                            revenue
+                                            and become part of SaaS offering, others are either sunsetted or ice-boxed)
+                                        </li>
+                                        <li>Contributed to:</li>
+                                        <ul>
+                                            <li>SIRCLO Commerce (Enterprise B2B)</li>
+                                            <ul>
+                                                <li>Spearheaded the entire product domains (e-commerce, WMS, ERP,
+                                                    Finance, 3rd
+                                                    party logistics)</li>
+                                                <li>Collaborated with internal & external stakeholders to scale
+                                                    fulfillment
+                                                    throughput</li>
+                                                <li>Worked together with 3rd parties to achieve seamless integration and
+                                                    make
+                                                    life easier for the users while saving hundreds million of IDR per
+                                                    month of
+                                                    opex</li>
+                                            </ul>
+                                        </ul>
+                                        <ul>
+                                            <li>SIRCLO Store (SME B2B2C - <a href="https://shopify.com"
+                                                    target="_blank">Shopify</a>-like SaaS)</li>
+                                            <ul>
+                                                <li>Collaborated with multiple stakeholders to launch new e-commerce
+                                                    SaaS
+                                                    platform (got a really good traction with help of covid)</li>
+                                                <li>Managed 1-3 PMs</li>
+                                                <li>Led 2 squads after the platform launched</li>
+                                                <ul>
+                                                    <li><b>Billing & subscription squad</b></li>
+                                                    <li>Launched new internal billing platform</li>
+                                                    <li>Collaborated with product design to revamp the subscription
+                                                        journey</li>
+                                                    <li>Increased self subscription rate</li>
+                                                    <li>Increased on time payment rate</li>
+                                                    <li><b>Registration, onboarding and user management squad</b></li>
+                                                    <li>Launched new internal billing platform</li>
+                                                    <li>Reduced bounce rate in registration journey</li>
+                                                    <li>Increased FTUE (First Time User Experience) and 1st week
+                                                        activation rate
+                                                    </li>
+                                                    <li>Collaborated with engineering team to create Public API
+                                                        documentation
+                                                    </li>
+                                                </ul>
+                                            </ul>
+                                        </ul>
+                                    </ul>
+                                </li>
+                                <li class="list-group-item border-0 bg-transparent">
+                                    <h5>
+                                        <a href="https://www.mii.co.id/?utm_source=dannyydj.my.id" target="_blank"
+                                            class="text-decoration-none">Mitra Integrasi Informatika</a>
+                                        - Application Consultant
+                                    </h5>
+                                    <p class="font-monospace fs-6 fw-light">Nov 2016 - Sep 2017</p>
+                                    <ul class="fs-6 fw-lighter">
+                                        <li>Infor SunSystems Application Consultant</li>
+                                        <li>Billing System Technical Consultant</li>
+                                        <li>ASP.NET (C#) Technical Consultant</li>
+                                        <li>Produced system (and functional) specification requirements document</li>
+                                        <li>Provide on-site support and application-related consulting</li>
+                                    </ul>
+                                </li>
+                                <li class="list-group-item border-0 bg-transparent">
+                                    <h5>
+                                        <a href="https://trisakti.ac.id/?utm_source=dannyydj.my.id" target="_blank"
+                                            class="text-decoration-none">Trisakti University</a>
+                                        - Lecturer
+                                    </h5>
+                                    <p class="font-monospace fs-6 fw-light">2014 - 2016</p>
+                                    <p class="fs-6 fw-lighter">Lecturer for Accounting Information System class in
+                                        Chartered
+                                        Accountant exam preparation program</p>
+                                </li>
+                                <li class="list-group-item border-0 bg-transparent">
+                                    <h5>
+                                        <a href="https://meta-technology.net/?utm_source=dannyydj.my.id" target="_blank"
+                                            class="text-decoration-none">Meta Advance Solution</a>
+                                        - Operation & Technology Head
+                                    </h5>
+                                    <p class="font-monospace fs-6 fw-light">Aug 2014 - Apr 2016</p>
+                                    <ul class="fs-6 fw-lighter">
+                                        <li>Co-founder</li>
+                                        <li>Spinoff company of Meta Technology Indonesia</li>
+                                        <li>Achieved 100 users with 10 mil IDR MRR on the 1st year but closed down after
+                                            no
+                                            additional funding</li>
+                                        <li>Develop and maintain company's bookkeeping SaaS product</li>
+                                        <li>Plan, manage, monitor, and execute daily operations</li>
+                                        <li>Training users, guide implementation and data migration</li>
+                                        <li>Deliver supports and troubleshooting for ultimate customer satisfaction</li>
+                                        <li>Act as consultant for system-related process to clients</li>
+                                    </ul>
+                                </li>
+                                <li class="list-group-item border-0 bg-transparent">
+                                    <h5>
+                                        <a href="https://meta-technology.net/?utm_source=dannyydj.my.id" target="_blank"
+                                            class="text-decoration-none">Meta Technology Indonesia</a>
+                                        - System Analyst
+                                    </h5>
+                                    <p class="font-monospace fs-6 fw-light">Jun 2010 - Sep 2016</p>
+                                    <ul class="fs-6 fw-lighter">
+                                        <li>Built and maintained integrated automotive dealership, workshop and
+                                            accounting
+                                            system</li>
+                                        <li>Gather user requirements</li>
+                                        <li>Conduct analysis on incoming change requests</li>
+                                        <li>Led and mentor fellow analysts, programmers, and implementers</li>
+                                        <li>Built a simple migration tool</li>
+                                        <li>Make sure all my teammates focused, driven, and encouraged throughout
+                                            projects</li>
+                                        <li>Plan, monitor, and execute defined timeline</li>
+                                        <li>Deliver support on-site or remote, pre and post migration, and live</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Projects Tab -->
+                        <div class="tab-pane fade" id="projects" role="tabpanel">
+                            <div class="project-card">
+                                <h5><i class="bi bi-star-fill text-warning"></i> ML-Powered User Review Classifier</h5>
+                                <p class="font-monospace fs-6 fw-light">2022-2023 | Xing</p>
+                                <p class="fs-6">Built an automated machine learning pipeline that classifies user
+                                    reviews and feedback from App Store and Google Play into categories (bugs, feature
+                                    requests, UX issues, praise).</p>
+                                <div class="project-tech-stack">
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">ML/NLP</span>
+                                    <span class="tech-badge">API</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Publications Tab -->
+                        <div class="tab-pane fade" id="publications" role="tabpanel">
+                            <div class="publication-card mb-4">
+                                <h5>Pengenalan Tools Trello untuk Anggota PKK Kelurahan Meruya Utara</h5>
+                                <div class="publication-meta text-muted fs-6">
+                                    <i class="bi bi-journal-bookmark"></i> Jurnal Pengabdian Pada Masyarakat | May 25,
+                                    2021
+                                </div>
+                            </div>
+                            <div class="publication-card mb-4">
+                                <h5>Analisa Integrasi Aplikasi Akuntansi Berbasis SaaS</h5>
+                                <div class="publication-meta text-muted fs-6">
+                                    <i class="bi bi-journal-bookmark"></i> Ultima InfoSys : Jurnal Ilmu Sistem
+                                    Informasi. Vol 9, No 1 (2020) | Jul 1, 2020
+                                </div>
+                            </div>
+                            <div class="publication-card mb-4">
+                                <h5>Analisis Perancangan Aplikasi Sistem Informasi E-Mard Berbasis Android pada PT XYZ
+                                </h5>
+                                <div class="publication-meta text-muted fs-6">
+                                    <i class="bi bi-journal-bookmark"></i> Rang Teknik Journal. Vol 2, No 1 (2019) | Jan
+                                    1, 2019
+                                </div>
+                            </div>
+                            <div class="publication-card mb-4">
+                                <h5>Aplikasi Catatan Pengingat Berbasis Lokasi Dengan Android</h5>
+                                <div class="publication-meta text-muted fs-6">
+                                    <i class="bi bi-journal-bookmark"></i> Journal of Technoprenuership and Information
+                                    System | Jan 1, 2019
+                                </div>
+                            </div>
+                            <div class="publication-card">
+                                <h5>Evaluasi Kualitas Informasi Sistem ERP Studi Kasus pada PT XYZ</h5>
+                                <div class="publication-meta text-muted fs-6">
+                                    <i class="bi bi-journal-bookmark"></i> Jurnal Ilmiah FIFO. Vol 10, No 1 (2018) | Jan
+                                    1, 2018
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
