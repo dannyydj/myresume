@@ -296,9 +296,10 @@ textarea {
     margin-top: 0.5rem;
 }
 
+.project-card .truncate,
 .publication-card .truncate {
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -355,8 +356,9 @@ textarea {
     }
 
     /* For publication abstracts - shorter on mobile */
-    .publication-card p {
-        -webkit-line-clamp: 2;
+    .project-card .truncate,
+    .publication-card .truncate {
+        -webkit-line-clamp: 3;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         overflow: hidden;
