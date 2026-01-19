@@ -296,6 +296,14 @@ textarea {
     margin-top: 0.5rem;
 }
 
+.publication-card .truncate {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     .chat-icon-button {
@@ -344,5 +352,13 @@ textarea {
 
     .fs-6 {
         font-size: 0.9rem !important;
+    }
+
+    /* For publication abstracts - shorter on mobile */
+    .publication-card p {
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 }
