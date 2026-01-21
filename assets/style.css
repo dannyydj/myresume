@@ -61,6 +61,20 @@ a.text-decoration-none {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
+/* Chat Button Unavailable State */
+.chat-button-container.unavailable {
+    cursor: not-allowed;
+}
+
+.chat-button-container.unavailable .chat-button-label {
+    color: #6c757d;
+}
+
+.chat-button-container.unavailable .chat-icon-button {
+    background: #ccc;
+    filter: grayscale(1);
+}
+
 /* Chat Modal */
 .chat-modal-overlay {
     display: none;

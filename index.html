@@ -679,7 +679,7 @@
         <div class="chat-modal">
             <div class="gradient-header">
                 <h5 class="mb-0">
-                    <i class="bi bi-robot icon-spacing"></i>Ask AI About My Work
+                    <i class="bi bi-robot icon-spacing"></i>Ask 🤖 About My Work
                 </h5>
                 <button class="close-button" id="closeModal">
                     <i class="bi bi-x"></i>
@@ -744,9 +744,31 @@
         const responseSection = document.getElementById('responseSection');
         const responseText = document.getElementById('responseText');
         const backBtn = document.getElementById('backBtn');
+        const chatLabel = chatButton.querySelector('.chat-button-label');
+
+        // Check if chatbot server is up
+        async function checkChatbotStatus() {
+            try {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 3000); // 3s timeout
+
+                await fetch('https://n8nme.dannyydj.my.id/healthz', {
+                    method: 'GET',
+                    mode: 'no-cors', // Use no-cors to avoid preflight issues for a simple ping
+                    signal: controller.signal
+                });
+                clearTimeout(timeoutId);
+            } catch (error) {
+                chatButton.classList.add('unavailable');
+                chatLabel.textContent = '🤖 is not available';
+            }
+        }
+
+        checkChatbotStatus();
 
         // Open modal
         chatButton.addEventListener('click', function () {
+            if (chatButton.classList.contains('unavailable')) return;
             chatModal.classList.add('show');
             // Always show form section when opening
             formSection.style.display = 'block';
