@@ -321,6 +321,10 @@ textarea {
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+    #profile-pic {
+        width: 180px;
+    }
+
     .chat-icon-button {
         display: none;
     }
